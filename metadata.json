@@ -1,0 +1,6 @@
+{
+  "name": "Wedding Invitation",
+  "description": "An interactive and beautifully styled wedding invitation application, featuring an interactive envelope, beautiful animations, falling flower petals, coordinates mapping, and RSVP countdown timers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

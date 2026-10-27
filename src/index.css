@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Aligarh Arabic FREE PERSONAL USE Bd';
+  src: url('/fonts/AligarhArabicFREEPERSONALUSE-Bold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+}
+
+@layer base {
+  :root {
+    /* Vibrant "neon night" palette */
+    --background: 240 35% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 30% 12% / 0.72;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 30% 10% / 0.92;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 320 90% 62%;
+    --primary-foreground: 240 35% 8%;
+
+    --secondary: 190 90% 45% / 0.35;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 18% 18% / 0.65;
+    --muted-foreground: 240 10% 78%;
+
+    --accent: 55 95% 60%;
+    --accent-foreground: 240 35% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 98% / 0.12;
+    --input: 240 18% 18% / 0.9;
+    --ring: 55 95% 60%;
+
+    --radius: 0.5rem;
+
+    /* Theme specific tokens */
+    --gold: 45 30% 92%;
+    --gold-light: 60 100% 72%;
+    --blush: 320 90% 62%;
+    --blush-dark: 320 90% 46%;
+    --ivory: 240 30% 14%;
+    --rose: 285 85% 70%;
+    --rose-light: 285 85% 80%;
+
+    /* Dedicated Petal Color */
+    --petal-red: 36 30% 70%;
+
+    /* Gradients */
+    --gradient-blush: linear-gradient(
+      135deg,
+      hsl(var(--blush) / 0.32) 0%,
+      hsl(190 90% 45% / 0.22) 45%,
+      hsl(var(--gold) / 0.18) 100%
+    );
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+    --gradient-romantic: linear-gradient(
+      180deg,
+      hsl(240 35% 8% / 0.92) 0%,
+      hsl(260 45% 12% / 0.78) 50%,
+      hsl(240 35% 8% / 0.92) 100%
+    );
+    --gradient-aurora: linear-gradient(
+      120deg,
+      hsl(190 90% 45% / 0.22) 0%,
+      hsl(320 90% 62% / 0.24) 35%,
+      hsl(285 85% 70% / 0.22) 60%,
+      hsl(55 95% 60% / 0.18) 100%
+    );
+
+    /* Shadows */
+    --shadow-soft: 0 10px 40px -18px hsl(0 0% 0% / 0.85);
+    --shadow-elegant: 0 18px 80px -28px hsl(0 0% 0% / 0.9);
+    --shadow-glow: 0 0 70px hsl(var(--accent) / 0.18);
+
+    /* Fonts */
+    --font-display: 'Great Vibes', cursive;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Playfair Display', serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 350 25% 8%;
+    --foreground: 30 40% 95%;
+
+    --card: 350 20% 12%;
+    --card-foreground: 30 40% 95%;
+
+    --popover: 350 20% 12%;
+    --popover-foreground: 30 40% 95%;
+
+    --primary: 350 45% 70%;
+    --primary-foreground: 350 25% 10%;
+
+    --secondary: 350 20% 18%;
+    --secondary-foreground: 30 40% 95%;
+
+    --muted: 350 20% 15%;
+    --muted-foreground: 30 20% 65%;
+
+    --accent: 340 35% 55%;
+    --accent-foreground: 30 40% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 350 20% 20%;
+    --input: 350 20% 20%;
+    --ring: 350 45% 70%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .text-rose {
+    color: hsl(var(--rose));
+  }
+
+  .text-rose-light {
+    color: hsl(var(--rose-light));
+  }
+
+  .text-petal {
+    color: hsl(var(--petal-red));
+  }
+
+  .bg-blush {
+    background-color: hsl(var(--blush));
+  }
+
+  .bg-ivory {
+    background-color: hsl(var(--ivory));
+  }
+
+  .bg-gradient-blush {
+    background: var(--gradient-blush);
+  }
+
+  .bg-gradient-romantic {
+    background: var(--gradient-romantic);
+  }
+
+  .bg-gradient-aurora {
+    background: var(--gradient-aurora);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Floating petals animation */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-20px) rotate(10deg);
+    }
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-fall {
+    animation: fall 10s linear infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg,
+        hsl(var(--gold)) 0%,
+        hsl(var(--gold-light)) 50%,
+        hsl(var(--gold)) 100%);
+    background-size: 200% auto;
+    animation: shimmer 3s ease-in-out infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 24px hsl(var(--accent) / 0.08);
+  }
+
+  @keyframes aurora {
+    0% {
+      background-position: 0% 50%;
+      transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+      background-position: 100% 50%;
+      transform: translate3d(0, -1.2%, 0);
+    }
+
+    100% {
+      background-position: 0% 50%;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes glowPulse {
+    0%,
+    100% {
+      filter: drop-shadow(0 0 0 hsl(var(--accent) / 0)) drop-shadow(0 0 22px hsl(var(--accent) / 0.08));
+    }
+
+    50% {
+      filter: drop-shadow(0 0 16px hsl(var(--accent) / 0.16)) drop-shadow(0 0 34px hsl(var(--blush) / 0.12));
+    }
+  }
+
+  @keyframes spinSlow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-aurora {
+    background-size: 380% 380%;
+    animation: aurora 14s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glowPulse 5.5s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spinSlow 18s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-fall,
+    .animate-shimmer,
+    .animate-aurora,
+    .animate-glow,
+    .animate-spin-slow {
+      animation: none !important;
+    }
+  }
+}
